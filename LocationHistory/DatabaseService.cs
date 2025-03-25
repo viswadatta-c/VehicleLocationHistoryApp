@@ -37,13 +37,11 @@ namespace LocationHistory
                 }
                 catch (SqlException ex)
                 {
-                    // Handle SQL exceptions (e.g., log, throw, etc.)
                     Console.WriteLine($"SQL Error: {ex.Message}");
-                    throw; // Rethrow to propagate the exception
+                    throw; 
                 }
                 catch (Exception ex)
                 {
-                    // Handle other exceptions (e.g., connection issues)
                     Console.WriteLine($"General Error: {ex.Message}");
                     throw;
                 }
@@ -52,7 +50,6 @@ namespace LocationHistory
             return dataTable;
         }
 
-        // Add more methods for other database operations (e.g., ExecuteNonQuery, ExecuteScalar) as needed.
         public int ExecuteNonQuery(string query)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
